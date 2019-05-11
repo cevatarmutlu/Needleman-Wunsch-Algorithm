@@ -21,6 +21,7 @@ line_list = fasta.get_list()
 
 # num_lines = len(line_list)
 num_lines = 9
+# 9*10/2=45 kere score değeri hesaplıyor. 9 satırın her birinin diğerleri ile score değerini hesaplıyor.
 needleman = Needleman.Needleman(match, mis_match, gap)
 threads = []
 
