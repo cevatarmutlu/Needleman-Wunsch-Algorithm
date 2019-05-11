@@ -20,7 +20,7 @@ fasta = Fasta.MyFasta('deneme')
 line_list = fasta.get_list()
 
 # num_lines = len(line_list)
-num_lines = 10
+num_lines = 9
 needleman = Needleman.Needleman(match, mis_match, gap)
 threads = []
 
@@ -30,12 +30,8 @@ for i in range(num_lines):
         dna2 = line_list[j]
         needleman.set_dna(dna1, dna2)
         threads = create_thread(threads)
-        print(threads)
         for ths in threads:
             ths.start()
-        # needleman.gap_list_create()
-        # needleman.l_val_list_create()
-        # needleman.u_val_list_create()
         for thj in threads:
             thj.join()
         needleman.calculate()
