@@ -5,16 +5,16 @@ def calculate(dna1: str, dna2: str, gap: float, match: float, mismatch: float):
 
     for row in range(1, row_len):
         for col in range(1, col_len):
-            left_val = need_arr[row][col - 1] + gap
-            down_val = need_arr[row - 1][col] + gap
+            left_val = need_arr[row][0] + gap * col
+            up_val = need_arr[0][col] + gap * row
             if dna2[row - 1] == dna1[col - 1]:
                 match_value = match
             else:
                 match_value = mismatch
             corner_val = need_arr[row - 1][col - 1] + match_value
 
-            max_val = max([left_val, down_val, corner_val])
-            need_arr[row].append(max_val)
+            cell_val = left_val + up_val + corner_val
+            need_arr[row].append(cell_val)
 
     return need_arr[row_len - 1][col_len - 1]
 

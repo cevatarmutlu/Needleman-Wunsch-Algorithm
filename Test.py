@@ -30,7 +30,7 @@ mis_match = -2.451795405
 gap = -1.832482334
 scores = []
 # num_lines = len(line_list)
-num_lines = 200
+num_lines = 50
 start_time = time.time()
 print('Başlangıç zamanı %f' % start_time)
 for i in range(num_lines):
