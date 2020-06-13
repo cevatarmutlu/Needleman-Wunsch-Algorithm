@@ -1,4 +1,4 @@
-# paralel
+# Needleman-Wunsch-Algorithm
 
 A program that reads the DNA sequences in Fasta files and calculates scores according to the Needleman process and writes the calculated scores to the excel file.
 
